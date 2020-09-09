@@ -49,3 +49,9 @@
   margin-top: 15px ;
   margin-bottom: 15px;
  }
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

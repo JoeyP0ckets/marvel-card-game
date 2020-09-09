@@ -13,6 +13,13 @@ class MutantSelect extends React.Component {
 
   renderMutants = () => {
     let allMutants = MutantFunctions.getAllMutants()
+    allMutants.sort((mutant1, mutant2) =>{  
+      if (mutant1.team  > mutant2.team)
+        return 1
+        else  if (mutant1.team < mutant2.team)
+          return -1
+        else return 0 
+      }) 
     this.props.renderAllMutants(allMutants)
   }
 
