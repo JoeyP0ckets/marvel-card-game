@@ -2,6 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 // import MutantCard from "./MutantCard"
 import TeamCard from './TeamCard'
+import {Container} from 'react-bootstrap'
 
 const TeamContainer = (props) => {
 
@@ -15,8 +16,11 @@ const TeamContainer = (props) => {
   }
   return(
     
-    <div className="team-container">
-      {renderTeamCards()}
+    <div>
+      <h1>Your Team</h1>
+      <Container className="team-container">
+        {renderTeamCards()}
+      </Container>
     </div>
   )
 }

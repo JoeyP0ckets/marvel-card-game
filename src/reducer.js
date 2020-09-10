@@ -1,7 +1,6 @@
 const initialState = {
   allMutants: [],
   team: [],
-  sortedByTeam: false,
 }
 
 const reducer = (prevState=initialState, action) => {
@@ -13,8 +12,6 @@ const reducer = (prevState=initialState, action) => {
     case "REMOVE_FROM_TEAM":
       let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
       return {...prevState, team: newTeamArray}
-    case "SORT_BY_TEAM":
-      return {...prevState, allMutants: action.sortedTeam}
     default:
       return prevState
   }

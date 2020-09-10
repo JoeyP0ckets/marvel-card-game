@@ -35,9 +35,12 @@ class MutantSelect extends React.Component {
   
   render() {
     return(
-      <Container>
-        {this.renderMutantCards()}
-      </Container>
+      <div>
+        <h1>Pick Your Team</h1>
+        <Container>
+          {this.renderMutantCards()}
+        </Container>
+      </div>
     )
   }
 }
