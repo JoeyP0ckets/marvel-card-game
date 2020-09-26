@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 .App {
   text-align: center;
   background-color: lightgrey;
@@ -48,11 +50,16 @@
 .card{
   margin-top: 15px ;
   margin-bottom: 15px;
+  font-family: 'Staatliches', cursive;
  }
 
 .team-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: blue;
+  background-color: gray;
+}
+
+.card-text {
+  font-family: 'Staatliches', cursive;
 }

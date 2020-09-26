@@ -12,9 +12,14 @@ const MutantCard = (props) => {
   return(
     <Card style={{ width: '12rem'}} className="box">
       <CardImg src={props.mutant.mainImage} height={200} width={200} alt={props.mutant.name}/>
-      <Card.Title>{props.mutant.name}</Card.Title>
-      <Card.Body>{props.mutant.team}</Card.Body>
-      <Button onClick={() => handleClick(props.mutant)}>Add To Team</Button>
+      <Card.Title>{props.mutant.name}
+      <h6>{props.mutant.team}</h6></Card.Title>
+      <Card.Body>
+       <h2>{props.mutant.value}</h2>
+        
+        <h3>{props.mutant.type}</h3>
+      </Card.Body>
+      <Button onClick={() => handleClick(props.mutant)}>Details</Button>
     </Card>
   )
 }

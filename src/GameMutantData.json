@@ -1,0 +1,93 @@
+[{"name":"Sabretooth","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/11131/111317321/7092103-creed.jpg","team":"Brotherhood of Mutants","type":"melee","id":"1"},
+
+  {"name":"Juggernaut","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/11111/111111230/3634847-juggernaut_00.jpg","team":"Brotherhood of Mutants","type":"melee","id":"2"},
+  
+  {"name":"Kingpin","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/3/31666/5545371-kingp2017001-cov-var-1.jpg","team":"Brotherhood of Mutants","type":"melee","id":"3"},
+  
+  {"name":"Blob","value":"4","mainImage":"https://upload.wikimedia.org/wikipedia/en/0/07/Blobm.PNG","team":"Brotherhood of Mutants","type":"melee","id":"4"},
+  
+  {"name":"Thanos","value":"7","mainImage":"https://vignette.wikia.nocookie.net/marveldatabase/images/0/04/Thanos_Vol_2_1_Textless.jpg/revision/latest?cb=20160823165448","team":"Brotherhood of Mutants","type":"melee","id":"5"},
+  
+  {"name":"Apocalypse","value":"6","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/12/124259/7075438-rco001_1568811166.jpg","team":"Brotherhood of Mutants","type":"melee","id":"6"},
+  
+  {"name":"Doctor Doom","value":"3","mainImage":"https://upload.wikimedia.org/wikipedia/en/6/60/Doctor_Doom_%282018%29.jpg","team":"Brotherhood of Mutants","type":"melee","id":"7"},
+  
+ 
+  
+  {"name":"Mystique","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/5/57023/7387355-mystique%20by%20shannon%20maer.jpg","team":"Brotherhood of Mutants","type":"mid","id":"8"},
+  
+  {"name":"Loki","value":"5","mainImage":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Loki_Amazing_Spider-Man_795.png/220px-Loki_Amazing_Spider-Man_795.png","team":"Brotherhood of Mutants","type":"mid","id":"9"},
+  
+  {"name":"Venom","value":"6","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_super/1/11136/2162546-012_lethal_protector.jpg","team":"Brotherhood of Mutants","type":"mid","id":"10"},
+  
+  {"name":"Destiny","value":"3","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/0/268/77268-162972-destiny.jpg","team":"Brotherhood of Mutants","type":"mid","id":"11"},
+  
+  {"name":"Ultron","value":"7","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/8/83882/2042019-ultron.jpg","team":"Brotherhood of Mutants","type":"mid","id":"12"},
+  
+  {"name":"Doctor Octopus","value":"5","mainImage":"https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Dr._Octopus_Marvel.jpg/250px-Dr._Octopus_Marvel.jpg","team":"Brotherhood of Mutants","type":"mid","id":"13"},
+  
+  {"name":"Red Skull","value":"3","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/0/77/4314088-red_skull_by_genzoman-d8cptp5.jpg","team":"Brotherhood of Mutants","type":"mid","id":"14"},
+  
+
+  
+  {"name":"Magneto","value":"7","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/9/96747/7079882-x-men-1-variant-cover-di-marco-checchetto.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"15"},
+  
+  {"name":"The Sentinels","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/0/308/89053-180625-rover.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"16"},
+  
+  {"name":"Green Goblin","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/14/148326/4118038-8136937484-250px.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"17"},
+  
+  {"name":"M.O.D.O.K.","value":"3","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/3/31666/4647547-tumblr_np1rq593dl1qlrd4qo4_1280.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"18"},
+  
+  {"name":"Galactus","value":"8","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/0/182/77017-19956-galactus.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"19"},
+  
+  {"name":"Mister Sinister","value":"6","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/10/100647/7261635-house%20of%20x-powers%20of%20x.jpg","team":"Brotherhood of Mutants","type":"ranged","id":"20"},
+  
+  
+  
+  {"name":"Wolverine","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/12/124259/7254202-wolv2020001_silva.jpg","team":"Marvel Heroes","type":"melee","id":"21"},
+  
+  {"name":"Hulk","value":"7","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/14/140903/4127149-11.jpg","team":"Marvel Heroes","type":"melee","id":"22"},
+  
+  {"name":"Groot","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/3/31666/4453639-groot2015001-cov-bdb43.jpg","team":"Marvel Heroes","type":"melee","id":"23"},
+  
+  {"name":"Colossus" ,"value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/11130/111300304/5810917-image.jpeg","team":"Marvel Heroes","type":"melee","id":"24"},
+  
+  {"name":"Captain America","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/0/40/79617-148996-captain-america.jpg","team":"Marvel Heroes","type":"melee","id":"25"},
+  
+  {"name":"Black Widow","value":"3","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/3/31666/5606768-bwidow2016012cov.jpg","team":"Marvel Heroes","type":"melee","id":"26"},
+  
+  {"name":"Thing","value":"6","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/11131/111310697/6338151-6978180503-62982.jpg","team":"Marvel Heroes","type":"melee","id":"27"},
+  
+ 
+  
+  {"name":"Cyclops","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/1/14487/6966021-cyclops.jpg","team":"Marvel Heroes","type":"mid","id":"28"},
+  
+  {"name":"Thor","value":"8","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/8/83882/2064466-the_mighty_thor__2_.jpg","team":"Marvel Heroes","type":"mid","id":"29"},
+  
+  {"name":"Spiderman","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/8/83882/2026841-spidey_by_mike_d.jpg","team":"Marvel Heroes","type":"mid","id":"30"},
+  
+  {"name":"Starlord","value":"3","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/11111/111113706/6412820-2754781110-starl.jpg","team":"Marvel Heroes","type":"mid","id":"31"},
+  
+  {"name":"Doctor Strange","value":"5","mainImage":"https://i.pinimg.com/originals/8d/5c/b3/8d5cb3cfadb1c931ea445da4ee1024f0.jpg","team":"Marvel Heroes","type":"mid","id":"32"},
+  
+  {"name":"Daredevil","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_medium/11118/111187046/7397359-0398898002-EQH1ysWWsAA7QLf","team":"Marvel Heroes","type":"mid","id":"33"},
+  
+  {"name":"Deadpool","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/3/31666/4943681-dpool2015007-cov-bec9c.jpg","team":"Marvel Heroes","type":"mid","id":"34"},
+  
+  
+  
+  {"name":"Professor X","value":"7","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/10/100647/7261595-hox1pichelli.jpg","team":"Marvel Heroes","type":"ranged","id":"35"},
+  
+  {"name":"Storm","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/9/96747/6939889-fearless2019002-cov.jpg","team":"Marvel Heroes","type":"ranged","id":"36"},
+  
+  {"name":"Rogue","value":"5","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_large/11136/111361168/7203335-doxrogue.jpg","team":"Marvel Heroes","type":"ranged","id":"37"},
+  
+  {"name":"Silver Surfer","value":"7","mainImage":"https://i.pinimg.com/originals/ea/57/50/ea5750a700e199a3a3d7d8aa798f449c.jpg","team":"Marvel Heroes","type":"ranged","id":"38"},
+  
+  {"name":"Iron Man","value":"6","mainImage":"https://comicvine1.cbsistatic.com/uploads/scale_small/11/117763/2639624-invincible_iron_man____digital__zone_empire__526___page_22.jpg","team":"Marvel Heroes","type":"ranged","id":"39"},
+  
+  {"name":"Mr. Fantastic","value":"4","mainImage":"https://comicvine1.cbsistatic.com/uploads/original/10/100647/4240402-ff0643-samnee-var-2181a.jpg","team":"Marvel Heroes","type":"ranged","id":"40"}
+  
+  ]
+  
+  

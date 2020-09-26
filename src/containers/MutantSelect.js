@@ -8,23 +8,36 @@ import {Container} from 'react-bootstrap'
 class MutantSelect extends React.Component {
 
   componentDidMount() {
-    this.renderMutants()
+    this.renderBrotherhoodMutants()
+    this.renderHeroMutants()
   }
 
-  renderMutants = () => {
-    let allMutants = MutantFunctions.getAllMutants()
-    allMutants.sort((mutant1, mutant2) =>{  
-      if (mutant1.team  > mutant2.team)
+  renderBrotherhoodMutants = () => {
+    let allBrotherhoodMutants = MutantFunctions.filterByBrotherhood()
+    allBrotherhoodMutants.sort((mutant1, mutant2) => {
+      if (mutant1.name > mutant2.name)
         return 1
-        else  if (mutant1.team < mutant2.team)
-          return -1
-        else return 0 
-      }) 
-    this.props.renderAllMutants(allMutants)
+        else if (mutant1.name < mutant2.name)
+        return -1
+        else return 0
+    })
+    this.props.renderBrotherhood(allBrotherhoodMutants)
+  }
+  
+  renderHeroMutants = () => {
+    let allHeroMutants = MutantFunctions.filterByHeroes()
+    allHeroMutants.sort((mutant1, mutant2) => {
+      if (mutant1.name > mutant2.name)
+        return 1
+        else if (mutant1.name < mutant2.name)
+        return -1
+        else return 0
+    })
+    this.props.renderHeroes(allHeroMutants)
   }
 
-  renderMutantCards = () => {
-    return this.props.allMutants.map((mutant, index) => 
+  renderBrotherhoodCards = () => {
+    return this.props.brotherhoodMutants.map((mutant, index) => 
     <MutantCard
       key={index}
       mutant={mutant}
@@ -32,13 +45,26 @@ class MutantSelect extends React.Component {
     )
   }
 
+  renderHeroCards = () => {
+    return this.props.heroMutants.map((mutant, index) => 
+      <MutantCard 
+        key={index}
+        mutant={mutant}
+      />
+    )
+  }
+
   
   render() {
     return(
       <div>
-        <h1>Pick Your Team</h1>
+        <h1>Brotherhood of Mutants</h1>
         <Container>
-          {this.renderMutantCards()}
+          {this.renderBrotherhoodCards()}
+        </Container>
+        <h1>Marvel Heroes</h1>
+        <Container>
+          {this.renderHeroCards()}
         </Container>
       </div>
     )
@@ -47,13 +73,15 @@ class MutantSelect extends React.Component {
 
 const msp = state => {
   return {
-    allMutants: state.allMutants
+    brotherhoodMutants: state.brotherhoodMutants,
+    heroMutants: state.heroMutants
   }
 }
 
 const mdp = dispatch => {
   return {
-    renderAllMutants: (allMutants) => dispatch({ type: 'GET_ALL_MUTANTS', allMutants: allMutants})
+    renderBrotherhood: (allBrotherhoodMutants) => dispatch({ type: "GET_ALL_BROTHERHOOD", allBrotherhoodMutants: allBrotherhoodMutants}),
+    renderHeroes: (allHeroMutants) => (dispatch({ type: "GET_ALL_HEROES", allHeroMutants: allHeroMutants}))
   }
 }
 
