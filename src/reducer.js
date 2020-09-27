@@ -2,7 +2,10 @@ const initialState = {
   team: [],
   allGameMutants: [],
   brotherhoodMutants: [],
-  heroMutants: []
+  heroMutants: [],
+  selectedTeam: [],
+  handSelected: false,
+  hand: [],
 }
 
 const reducer = (prevState=initialState, action) => {
@@ -13,8 +16,12 @@ const reducer = (prevState=initialState, action) => {
       return {...prevState, brotherhoodMutants: action.allBrotherhoodMutants}
     case "GET_ALL_HEROES":
       return {...prevState, heroMutants: action.allHeroMutants}
-    case "ADD_TO_TEAM":
-      return {...prevState, team: [...prevState.team, action.name]}
+    case "SELECT_TEAM":
+      return {...prevState, selectedTeam: action.team}
+    case "DEAL_HAND":
+      return {...prevState, hand: action.hand}
+    case "CONFIRM_HAND":
+      return {...prevState, handSelected: true}
     case "REMOVE_FROM_TEAM":
       let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
       return {...prevState, team: newTeamArray}

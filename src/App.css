@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Montserrat+Subrayada:wght@400;700&family=Butcherman&family=Six+Caps&family=Nosifer&family=Faster+One&family=Berkshire+Swash&family=Black+Ops+One&family=Staatliches&display=swap');
 
 .App {
   text-align: center;
@@ -51,6 +51,7 @@
   margin-top: 15px ;
   margin-bottom: 15px;
   font-family: 'Staatliches', cursive;
+  width: 200
  }
 
 .team-container {
@@ -60,6 +61,42 @@
   background-color: gray;
 }
 
+.value-text {
+  font-family: 'Monofett', cursive;
+  font-size: 60px;
+  color: yellow;
+}
+
 .card-text {
   font-family: 'Staatliches', cursive;
+  
+}
+
+.melee-text {
+  font-family: 'Nosifer', cursive;
+  color: red;
+}
+
+.mid-text {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: green;
+}
+
+.ranged-text {
+  font-family: 'Faster One', cursive;
+  font-size: 30px;
+  color: purple;
+}
+
+.card-image {
+  padding: 10px;
+}
+
+.title-background {
+  background-color: yellow;
+  
+}
+
+.name-color {
+  color: black 
 }
