@@ -55,23 +55,24 @@ class MutantSelect extends React.Component {
   }
 
   handleSelectClick = (team) => {
-   this.props.selectTeam(team)
-   this.props.confirmHand()
-   let hand = team.sort(() => Math.random() - Math.random()).slice(0, 8)
+    this.props.selectTeam(team)
+    this.props.confirmHand()
+    let hand = team.sort(() => Math.random() - Math.random()).slice(0, 8)
     this.props.dealHand(hand)
+    let drawDeck = team.filter(function(obj) { return hand.indexOf(obj) === -1; })
+    this.props.loadDrawDeck(drawDeck)
   }
-
   
   render() {
-    console.log(this.props.hand)
+    // console.log(this.props.drawDeck)
     return(
       <div>
-        <h1>Brotherhood of Mutants</h1>
+        <h1 className="team-text">Brotherhood of Mutants</h1>
         <Button onClick={() => this.handleSelectClick(this.props.brotherhoodMutants)}>SELECT BROTHERHOOD DECK</Button>
         <Container>
           {this.renderBrotherhoodCards()}
         </Container>
-        <h1>Marvel Heroes</h1>
+        <h1 className="hero-text">Marvel Heroes</h1>
         <Button onClick={() => this.handleSelectClick(this.props.heroMutants)}>SELECT HEROES</Button>
         <Container>
           {this.renderHeroCards()}
@@ -86,7 +87,8 @@ const msp = state => {
     brotherhoodMutants: state.brotherhoodMutants,
     heroMutants: state.heroMutants,
     selectedTeam: state.selectedTeam,
-    hand: state.hand
+    hand: state.hand,
+    drawDeck: state.drawDeck
   }
 }
 
@@ -96,7 +98,8 @@ const mdp = dispatch => {
     renderHeroes: (allHeroMutants) => dispatch({ type: "GET_ALL_HEROES", allHeroMutants: allHeroMutants}),
     selectTeam: (team) => dispatch({ type: "SELECT_TEAM", team: team}),
     dealHand: (hand) => dispatch({ type: "DEAL_HAND", hand: hand}),
-    confirmHand: () => dispatch({ type:"CONFIRM_HAND"})
+    confirmHand: () => dispatch({ type:"CONFIRM_HAND"}),
+    loadDrawDeck: (drawDeck) => dispatch({ type:"DRAW_DECK", drawDeck: drawDeck})
   }
 }
 

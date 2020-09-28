@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Montserrat+Subrayada:wght@400;700&family=Butcherman&family=Six+Caps&family=Nosifer&family=Faster+One&family=Berkshire+Swash&family=Black+Ops+One&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Monofett&family=Montserrat+Subrayada:wght@400;700&family=Butcherman&family=Six+Caps&family=Nosifer&family=Faster+One&family=Berkshire+Swash&family=Black+Ops+One&family=Staatliches&display=swap');
 
 .App {
   text-align: center;
-  background-color: lightgrey;
+  background-color: gray;
 }
 
 .App-logo {
@@ -61,6 +61,14 @@
   background-color: gray;
 }
 
+.team-text {
+  font-family: 'Butcherman', cursive;
+}
+
+.hero-text {
+  font-family: 'Megrim', cursive;
+}
+
 .value-text {
   font-family: 'Monofett', cursive;
   font-size: 60px;
@@ -74,12 +82,12 @@
 
 .melee-text {
   font-family: 'Nosifer', cursive;
-  color: red;
+  color: darkred;
 }
 
 .mid-text {
   font-family: 'Montserrat Subrayada', sans-serif;
-  color: green;
+  color: darkgreen;
 }
 
 .ranged-text {
@@ -90,6 +98,11 @@
 
 .card-image {
   padding: 10px;
+}
+
+.hand-image {
+  padding: 12px;
+  
 }
 
 .title-background {
