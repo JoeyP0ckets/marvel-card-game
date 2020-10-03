@@ -7,6 +7,10 @@ const initialState = {
   handSelected: false,
   hand: [],
   drawDeck: [],
+  gameStart: false,
+  gameBoard: [],
+  graveyard: [],
+
 }
 
 const reducer = (prevState=initialState, action) => {
@@ -31,11 +35,14 @@ const reducer = (prevState=initialState, action) => {
       let newHandArray = prevState.hand.filter(mutant => mutant.id !== action.id)
       return {...prevState, hand: newHandArray}
     case "REMOVE_FROM_DECK":
-      // debugger
       let newDeckArray = prevState.drawDeck.filter(mutant => mutant.id !== action.newCard.id)
       return {...prevState, drawDeck: newDeckArray}
     case "ADD_TO_DECK":
       return {...prevState, drawDeck: [...prevState.drawDeck, action.mutant]}
+    case "START_GAME":
+      return {...prevState, gameStart: true}
+    case "PLAY_CARD":
+      return {...prevState, gameBoard: [...prevState.gameBoard, action.mutant]}
 
     // case "REMOVE_FROM_TEAM":
     //   let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)

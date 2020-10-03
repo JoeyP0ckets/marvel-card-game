@@ -97,7 +97,7 @@
 }
 
 .card-image {
-  padding: 10px;
+  padding: 12px;
 }
 
 .hand-image {
@@ -112,4 +112,24 @@
 
 .name-color {
   color: black 
+}
+
+.game-container {
+  background-color: white;
+}
+
+.melee-row {
+  background-color: darkred;
+  height: 290px;
+  border: black
+}
+
+.mid-row {
+  background-color: darkgreen;
+  height: 290px;
+}
+
+.ranged-row {
+  background-color: purple;
+  height: 290px;
 }

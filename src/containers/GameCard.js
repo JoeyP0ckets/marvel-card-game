@@ -1,10 +1,8 @@
-import React, {useState} from "react"
+import React from "react"
 import { Card, CardImg, ListGroup } from "react-bootstrap"
 import {connect} from "react-redux"
 
-const HandCard = (props) => {
-  
-  const [count, setCount] = useState(0);
+const GameCard = (props) => {
   
   const renderTypeFont = () => {
     if (props.mutant.type === "melee") {
@@ -16,28 +14,20 @@ const HandCard = (props) => {
     }
   }
   
-  const handleSwapClick = (mutant,id) => {
+  const handlePlayClick = (mutant, id) => {
+    props.playCard(mutant)
     props.removeFromHand(id)
-    props.addToDeck(mutant)
-    getNewCard()
-    handleIncrement()
+    console.log(props.hand)
+    console.log(props.gameBoard)
   }
-
-  const handleIncrement = () => {
-    setCount(count + 1)
-    if (count === 1) {
-      alert("MAX CARDS PICKED")
-    }
-  }
-
-  const getNewCard = () => {
-    var newCard = props.drawDeck[Math.floor(Math.random() * props.drawDeck.length)]
-      props.removeFromDeck(newCard)
-      props.addToHand(newCard)
-  }
+  // const getNewCard = () => {
+  //   var newCard = props.drawDeck[Math.floor(Math.random() * props.drawDeck.length)]
+  //     props.removeFromDeck(newCard)
+  //     props.addToHand(newCard)
+  // }
   
   return (
-    <Card style={{ width: '14rem' }} className="bg-dark text-white" onClick={() => handleSwapClick(props.mutant, props.mutant.id)}>
+    <Card style={{ width: '14rem' }} className="bg-dark text-white" onClick={() => handlePlayClick(props.mutant, props.mutant.id)}>
       <CardImg className="hand-image"src={props.mutant.mainImage} height="260" width="160" alt={props.mutant.name}/>
       <ListGroup className="title-background">
         <h2 className="name-color">{props.mutant.name}</h2>
@@ -54,6 +44,7 @@ const msp = state => {
   return {
     hand: state.hand,
     drawDeck: state.drawDeck,
+    gameBoard: state.gameBoard
   }
 }
 
@@ -63,7 +54,9 @@ const mdp = dispatch => {
     addToHand: (newCard) => dispatch({type:"ADD_TO_HAND", newCard: newCard}),
     removeFromDeck: (newCard) => dispatch({type:"REMOVE_FROM_DECK", newCard: newCard}),
     addToDeck: (mutant) => dispatch({type:"ADD_TO_DECK", mutant: mutant}),
+    addToGraveyard: (mutant) => dispatch({type:"ADD_TO_GRAVEYARD", mutant: mutant}),
+    playCard: (mutant) => dispatch({type:"PLAY_CARD", mutant: mutant})
   }
 }
 
-export default connect(msp,mdp)(HandCard)
+export default connect(msp,mdp)(GameCard)

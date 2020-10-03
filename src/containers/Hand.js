@@ -46,8 +46,7 @@ const Hand = (props) => {
   }
 
   const handleStartClick = () => {
-    alert("Are you sure?")
-    
+    props.startGame()
   }
   
   return (
@@ -77,7 +76,8 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    loadDrawDeck: (drawDeck) => dispatch({ type:"DRAW_DECK", drawDeck: drawDeck})
+    loadDrawDeck: (drawDeck) => dispatch({ type:"DRAW_DECK", drawDeck: drawDeck}),
+    startGame: () => dispatch({ type:'START_GAME'})
   }
 }
 
