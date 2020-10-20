@@ -55,7 +55,8 @@ const reducer = (prevState=initialState, action) => {
       return {...prevState, roundOneTotal: prevState.roundOneTotal + action.sum}
     case "ADD_TO_GRAVEYARD":
       return {...prevState, graveyard: [...prevState.graveyard, action.cards]}
-
+    case "RESET_GAMEBOARD":
+      return {...prevState, gameBoard: []}
     // case "REMOVE_FROM_TEAM":
     //   let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
     //   return {...prevState, team: newTeamArray}

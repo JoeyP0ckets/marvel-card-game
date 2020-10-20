@@ -55,6 +55,7 @@ const GameBoard = (props) => {
     props.totalRoundOne(sum)
     props.endTurn()
     props.addToGraveYard(props.gameBoard)
+    props.resetGameBoard()
   }
 
   const roundCounter = () => {
@@ -64,7 +65,26 @@ const GameBoard = (props) => {
     return <h1>{roundSum}</h1>
   }
 
+  const drawDeck = () => {
+    return props.drawDeck.map(mutant =>
+      <li>
+        {mutant.name}
+      </li>
+      )
+  }
   
+  const graveyard = () => {
+    return props.graveyard.map(mutant =>
+      <li>
+        {mutant.name}
+      </li>)
+  }
+
+  const drawCard = () => {
+    var newCard = props.drawDeck[Math.floor(Math.random() * props.drawDeck.length)]
+      props.removeFromDeck(newCard)
+      props.addToHand(newCard)
+  }
 
 
   
@@ -80,10 +100,15 @@ const GameBoard = (props) => {
         {totalRanged()}
       </Row>
       <Button onClick={() => endTurn()}>End Turn</Button>
+      <Button onClick={() => drawCard()}>Draw Card</Button>
       <Container>
         {renderHand()}
       </Container>
       {roundCounter()}
+      DrawDeck
+      {drawDeck()}
+      Graveyard
+      {props.graveyard ? graveyard() : null}
     </div>
   )
 }
@@ -102,7 +127,10 @@ const mdp = dispatch => {
   return {
     endTurn: () => dispatch({type:"END_TURN"}),
     totalRoundOne: (sum) => dispatch({type:"ROUND_ONE_TOTAL", sum: sum}),
-    addToGraveYard: (cards) => dispatch({type:"ADD_TO_GRAVEYARD", cards: cards})
+    addToGraveYard: (cards) => dispatch({type:"ADD_TO_GRAVEYARD", cards: cards}),
+    resetGameBoard: () => dispatch({type:"RESET_GAMEBOARD"}),
+    removeFromDeck: (newCard) => dispatch({type:"REMOVE_FROM_DECK", newCard: newCard}),
+    addToHand: (newCard) => dispatch({type: "ADD_TO_HAND", newCard: newCard})
   }
 }
 export default connect(msp,mdp)(GameBoard)
