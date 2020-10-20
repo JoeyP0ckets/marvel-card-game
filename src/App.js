@@ -4,6 +4,7 @@ import MutantNavbar from './components/Navbar'
 import MutantSelect from './containers/MutantSelect'
 import Hand from './containers/Hand'
 import GameBoard from './containers/GameBoard'
+import Welcome from './containers/Welcome'
 import {connect} from "react-redux"
 
 
@@ -18,7 +19,8 @@ function App(props) {
   }
   return (
     <div className="App">
-      <MutantNavbar/>
+      {/* {props.welcome ? <Welcome/> : render} */}
+      <MutantNavbar/> 
       {props.gameStart ? <GameBoard/> : renderSelect() }
     </div>
   );
@@ -26,7 +28,8 @@ function App(props) {
 const msp = state => {
   return {
     handSelected: state.handSelected,
-    gameStart: state.gameStart
+    gameStart: state.gameStart,
+    welcome: state.welcome
   }
 }
 export default connect(msp)(App);

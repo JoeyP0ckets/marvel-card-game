@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  background-color: gray;
+  background-color: black;
 }
 
 .App-logo {
@@ -44,7 +44,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: black;
+  background-image: url(https://cdn.wallpapersafari.com/96/34/R57Mjn.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; ;
 }
 
 .card{
@@ -63,10 +66,12 @@
 
 .team-text {
   font-family: 'Butcherman', cursive;
+  color: white;
 }
 
 .hero-text {
   font-family: 'Megrim', cursive;
+  color: white;
 }
 
 .value-text {
@@ -115,21 +120,43 @@
 }
 
 .game-container {
-  background-color: white;
+  background-color:black;
 }
 
 .melee-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: darkred;
   height: 290px;
   border: black
 }
 
 .mid-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: darkgreen;
   height: 290px;
+  
 }
 
 .ranged-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: purple;
   height: 290px;
+}
+
+.welcome-container{
+  height:100vh; 
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-image: url(https://cdn.wallpapersafari.com/96/34/R57Mjn.jpg);
 }

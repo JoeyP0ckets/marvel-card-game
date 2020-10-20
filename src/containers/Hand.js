@@ -40,10 +40,10 @@ const Hand = (props) => {
     return total
   }
   
-  const displayDrawDeck = () => {
-    return props.drawDeck.map(mutant => 
-    <li>{mutant.name}</li>)
-  }
+  // const displayDrawDeck = () => {
+  //   return props.drawDeck.map(mutant => 
+  //   <li>{mutant.name}</li>)
+  // }
 
   const handleStartClick = () => {
     props.startGame()
@@ -56,7 +56,7 @@ const Hand = (props) => {
       <h4 className="melee-text">Melee: {totalMelee()}</h4>
       <h4 className="mid-text">Mid: {totalMid()}</h4>
       <h4 className="ranged-text">Ranged: {totalRanged()}</h4>
-      <h5> {displayDrawDeck()}</h5>
+      {/* <h5> {displayDrawDeck()}</h5> */}
       <h1 className="card-text">Pick Up To Two Cards to Replace</h1>
       <Button onClick={() => handleStartClick()}>Start Game</Button>
       <Container>

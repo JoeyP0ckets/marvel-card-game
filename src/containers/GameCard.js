@@ -17,8 +17,6 @@ const GameCard = (props) => {
   const handlePlayClick = (mutant, id) => {
     props.playCard(mutant)
     props.removeFromHand(id)
-    console.log(props.hand)
-    console.log(props.gameBoard)
   }
   // const getNewCard = () => {
   //   var newCard = props.drawDeck[Math.floor(Math.random() * props.drawDeck.length)]

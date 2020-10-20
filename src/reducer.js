@@ -1,4 +1,5 @@
 const initialState = {
+  welcome: true,
   team: [],
   allGameMutants: [],
   brotherhoodMutants: [],
@@ -10,6 +11,9 @@ const initialState = {
   gameStart: false,
   gameBoard: [],
   graveyard: [],
+  roundEnded: false,
+  roundOneTotal: 0,
+  gameTotal: 0,
 
 }
 
@@ -17,6 +21,8 @@ const reducer = (prevState=initialState, action) => {
   switch(action.type) {
     // case "GET_ALL_GAME_MUTANTS":
     //   return {...prevState, allGameMutants: action.allGameMutants}
+    case "SELECT_START":
+      return {...prevState, welcome: false}
     case "GET_ALL_BROTHERHOOD":
       return {...prevState, brotherhoodMutants: action.allBrotherhoodMutants}
     case "GET_ALL_HEROES":
@@ -43,6 +49,12 @@ const reducer = (prevState=initialState, action) => {
       return {...prevState, gameStart: true}
     case "PLAY_CARD":
       return {...prevState, gameBoard: [...prevState.gameBoard, action.mutant]}
+    case "END_TURN":
+      return {...prevState, roundEnded: true}
+    case "ROUND_ONE_TOTAL":
+      return {...prevState, roundOneTotal: prevState.roundOneTotal + action.sum}
+    case "ADD_TO_GRAVEYARD":
+      return {...prevState, graveyard: [...prevState.graveyard, action.cards]}
 
     // case "REMOVE_FROM_TEAM":
     //   let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
