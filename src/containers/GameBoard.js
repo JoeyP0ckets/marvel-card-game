@@ -1,8 +1,9 @@
 import React from "react"
 import {connect} from "react-redux"
-import {Container, Row} from "react-bootstrap"
+import {Container, Row, Button} from "react-bootstrap"
 import GameCard from './GameCard'
 import BoardCard from './BoardCard'
+
 
 
 
@@ -17,10 +18,6 @@ const GameBoard = (props) => {
       )
   }
 
-  // const sortGameCards = () => {
-  //   console.log(props.gameBoard.mutant)
-  //   return renderGameCard()
-  // }
   const totalMelee = () => {
     let meleeArray = props.gameBoard.filter(mutant => mutant.type === "melee")
     return meleeArray.map((mutant, index) =>
@@ -51,34 +48,67 @@ const GameBoard = (props) => {
     )
   }
 
-  // const renderBoardCard = (meleeArray) => {
+  const endTurn = () => {
+    let sum = props.gameBoard.reduce(function(prev, current) {
+      return prev + +current.value
+    }, 0);
+    props.totalRoundOne(sum)
+    props.endTurn()
+    props.addToGraveYard(props.gameBoard)
+    props.resetGameBoard()
+  }
 
-  //   return props.gameBoard.map((mutant, index) =>
-  //     <BoardCard
-  //       key={index}
-  //       mutant={mutant}
-  //     />
-  //   )
-  // }
+  const roundCounter = () => {
+    let roundSum = props.gameBoard.reduce(function(prev, current) {
+      return prev + +current.value
+    }, 0);
+    return <h1>{roundSum}</h1>
+  }
+
+  const drawDeck = () => {
+    return props.drawDeck.map(mutant =>
+      <li>
+        {mutant.name}
+      </li>
+      )
+  }
+  
+  const graveyard = () => {
+    return props.graveyard.map(mutant =>
+      <li>
+        {mutant.name}
+      </li>)
+  }
+
+  const drawCard = () => {
+    var newCard = props.drawDeck[Math.floor(Math.random() * props.drawDeck.length)]
+      props.removeFromDeck(newCard)
+      props.addToHand(newCard)
+  }
+
+
   
   return (
     <div className="game-container">
       <Row className="melee-row">
-        Melee Row
         {totalMelee()}
-
       </Row>
       <Row className="mid-row">
-        Mid Row
         {totalMid()}
       </Row>
       <Row className="ranged-row">
-        Ranged Row
         {totalRanged()}
       </Row>
+      <Button onClick={() => endTurn()}>End Turn</Button>
+      <Button onClick={() => drawCard()}>Draw Card</Button>
       <Container>
         {renderHand()}
       </Container>
+      {roundCounter()}
+      DrawDeck
+      {drawDeck()}
+      Graveyard
+      {props.graveyard ? graveyard() : null}
     </div>
   )
 }
@@ -88,6 +118,19 @@ const msp = state => {
     hand: state.hand,
     drawDeck: state.drawDeck,
     gameBoard: state.gameBoard,
+    roundOneTotal: state.roundOneTotal,
+    graveyard: state.graveyard,
   }
 }
-export default connect(msp)(GameBoard)
+
+const mdp = dispatch => {
+  return {
+    endTurn: () => dispatch({type:"END_TURN"}),
+    totalRoundOne: (sum) => dispatch({type:"ROUND_ONE_TOTAL", sum: sum}),
+    addToGraveYard: (cards) => dispatch({type:"ADD_TO_GRAVEYARD", cards: cards}),
+    resetGameBoard: () => dispatch({type:"RESET_GAMEBOARD"}),
+    removeFromDeck: (newCard) => dispatch({type:"REMOVE_FROM_DECK", newCard: newCard}),
+    addToHand: (newCard) => dispatch({type: "ADD_TO_HAND", newCard: newCard})
+  }
+}
+export default connect(msp,mdp)(GameBoard)
