@@ -15,6 +15,7 @@ const initialState = {
   roundOneTotal: 0,
   playerTwoTotal: 0,
 
+
 }
 
 const reducer = (prevState=initialState, action) => {
@@ -59,10 +60,11 @@ const reducer = (prevState=initialState, action) => {
       return {...prevState, gameBoard: []}
     case "PLAYER_TWO_SCORE":
       return {...prevState, playerTwoTotal: prevState.playerTwoTotal + action.number}
-    
-    // case "REMOVE_FROM_TEAM":
-    //   let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
-    //   return {...prevState, team: newTeamArray}
+    case "REMOVE_FROM_TEAM":
+      let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
+      return {...prevState, team: newTeamArray}
+    case "RESET_ROUND_":
+      return {...prevState, roundEnded: false}
     default:
       return prevState
   }
