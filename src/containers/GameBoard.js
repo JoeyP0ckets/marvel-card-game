@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import {Container, Row, Button} from "react-bootstrap"
 import GameCard from './GameCard'
 import BoardCard from './BoardCard'
+import MutantNavbar from "../components/Navbar"
 
 
 
@@ -49,6 +50,7 @@ const GameBoard = (props) => {
   }
 
   const endTurn = () => {
+    scorePlayerTwo()
     let sum = props.gameBoard.reduce(function(prev, current) {
       return prev + +current.value
     }, 0);
@@ -56,6 +58,7 @@ const GameBoard = (props) => {
     props.endTurn()
     props.addToGraveYard(props.gameBoard)
     props.resetGameBoard()
+    
   }
 
   const roundCounter = () => {
@@ -86,10 +89,19 @@ const GameBoard = (props) => {
       props.addToHand(newCard)
   }
 
+  const scorePlayerTwo = () => {
+    var min = 0;
+    var max = 44;
+    var number = min + Math.random() * (max - min);
+    console.log(number)
+    props.playerTwoScore(number)
+  }
+
 
   
   return (
     <div className="game-container">
+      {props.playerTwoTotal}
       <Row className="melee-row">
         {totalMelee()}
       </Row>
@@ -120,6 +132,7 @@ const msp = state => {
     gameBoard: state.gameBoard,
     roundOneTotal: state.roundOneTotal,
     graveyard: state.graveyard,
+    playerTwoTotal: state.playerTwoTotal,
   }
 }
 
@@ -130,7 +143,8 @@ const mdp = dispatch => {
     addToGraveYard: (cards) => dispatch({type:"ADD_TO_GRAVEYARD", cards: cards}),
     resetGameBoard: () => dispatch({type:"RESET_GAMEBOARD"}),
     removeFromDeck: (newCard) => dispatch({type:"REMOVE_FROM_DECK", newCard: newCard}),
-    addToHand: (newCard) => dispatch({type: "ADD_TO_HAND", newCard: newCard})
+    addToHand: (newCard) => dispatch({type: "ADD_TO_HAND", newCard: newCard}),
+    playerTwoScore: (number) => dispatch({type: "PLAYER_TWO_SCORE", number: number})
   }
 }
 export default connect(msp,mdp)(GameBoard)
