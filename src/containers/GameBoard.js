@@ -58,6 +58,7 @@ const GameBoard = (props) => {
     props.endTurn()
     props.addToGraveYard(props.gameBoard)
     props.resetGameBoard()
+    roundWinner()
     
   }
 
@@ -97,6 +98,13 @@ const GameBoard = (props) => {
     props.playerTwoScore(number)
   }
 
+  const roundWinner = () => {
+    if (props.playerTwoScore > props.roundOneTotal) {
+      return alert("You lost the round")
+    } else {
+      return alert("You won the round!")
+    }
+  }
 
   
   return (
