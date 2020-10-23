@@ -91,7 +91,7 @@ const GameBoard = (props) => {
 
   const scorePlayerTwo = () => {
     var min = 0;
-    var max = 44;
+    var max = 15;
     var number = min + Math.random() * (max - min);
     console.log(number)
     props.playerTwoScore(number)
