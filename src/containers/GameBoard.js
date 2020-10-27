@@ -99,7 +99,7 @@ const GameBoard = (props) => {
   }
 
   const roundWinner = () => {
-    if (props.playerTwoScore > props.roundOneTotal) {
+    if (props.playerTwoTotal > props.roundOneTotal) {
       return alert("You lost the round")
     } else {
       return alert("You won the round!")
