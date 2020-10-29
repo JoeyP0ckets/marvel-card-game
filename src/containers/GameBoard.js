@@ -59,6 +59,7 @@ const GameBoard = (props) => {
     props.addToGraveYard(props.gameBoard)
     props.resetGameBoard()
     roundWinner()
+    props.resetPlayerTwo()
     
   }
 
@@ -151,7 +152,8 @@ const mdp = dispatch => {
     resetGameBoard: () => dispatch({type:"RESET_GAMEBOARD"}),
     removeFromDeck: (newCard) => dispatch({type:"REMOVE_FROM_DECK", newCard: newCard}),
     addToHand: (newCard) => dispatch({type: "ADD_TO_HAND", newCard: newCard}),
-    playerTwoScore: (number) => dispatch({type: "PLAYER_TWO_SCORE", number: number})
+    playerTwoScore: (number) => dispatch({type: "PLAYER_TWO_SCORE", number: number}),
+    resetPlayerTwo: () => dispatch({type:"RESET_PLAYER_TWO_SCORE"})
   }
 }
 export default connect(msp,mdp)(GameBoard)

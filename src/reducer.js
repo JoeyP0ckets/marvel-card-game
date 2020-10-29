@@ -60,6 +60,8 @@ const reducer = (prevState=initialState, action) => {
       return {...prevState, gameBoard: []}
     case "PLAYER_TWO_SCORE":
       return {...prevState, playerTwoTotal: prevState.playerTwoTotal + action.number}
+    case "RESET_PLAYER_TWO_SCORE":
+      return {...prevState, playerTwoTotal: 0}
     case "REMOVE_FROM_TEAM":
       let newTeamArray = prevState.team.filter(mutant => mutant.name !== action.name)
       return {...prevState, team: newTeamArray}
