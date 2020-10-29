@@ -106,7 +106,6 @@ const GameBoard = (props) => {
     }
   }
 
-  
   return (
     <div className="game-container">
       {props.playerTwoTotal}
